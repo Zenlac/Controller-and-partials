@@ -86,6 +86,9 @@ Route::get('/user', [UserController::class, 'index']);
 
 Route::get('/user/{id}', [UserController::class, 'show']);
 
-
+Route::view('unauthorized','unauthorized');
 
 Route::get('/students', [StudentsController::class, 'index']);
+
+Route::view('home','home')->middleware('protectedPage');
+Route::view('noaccess','noaccess');
